@@ -32,10 +32,11 @@ class App {
         this.globe = new Globe(this.scene, this.camera, this.cameraSphere, this.requestRender);
         this.countries = new Countries(this.scene, this.camera, this.requestRender);
         this.labels = new Labels(this.canvas, this.camera);
+        this.labels.init();
 
         this.globe.createGlobe(this.container);
         this.labels.setupLabelCanvas(this.container);
-        this.countries.fetchGeoJson();
+        this.countries.loadData();
     }
 
     setupControls() {
